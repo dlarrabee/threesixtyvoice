@@ -8,7 +8,22 @@ module Threesixtyvoice
                            :category, :category_id, :threshold, :categoryname,
                            :badgescore_old, :badgescore, :badgescorecount)
   end
-  
+
+  class BadgesListGamertags
+    attr_reader :version, :title, :id, :count, :owners
+
+    def initialize(doc)
+
+      @version = doc.xpath('//api/info/version').text
+      @title = doc.xpath('//api/info/title').text
+      @count = doc.xpath('//api/info/count').text
+      @id = doc.xpath('//api/info/id').text
+
+      @owners = doc.xpath('//api/owners/owner').map { |i| i.text }
+
+    end
+
+  end
 
   class BadgeList
     attr_reader :version, :title, :badges
@@ -29,12 +44,20 @@ module Threesixtyvoice
     end
   end
 
+  def self.badges_list_gamertags(badge_id)
+    uri = URI.parse("http://360voice.gamerdna.com")
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.get("/api/badges-list-gamertags.asp?id=#{badge_id}").body
+    doc = Nokogiri::XML(response)
+    BadgesListGamertags.new(doc)
+  end
+
   def self.badge_list
     uri = URI.parse("http://360voice.gamerdna.com/api/badges-list.asp")
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.get(uri.path).body
     doc = Nokogiri::XML(response)
-    b = BadgeList.new(doc)
+    BadgeList.new(doc)
   end
 
 end
