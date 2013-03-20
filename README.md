@@ -1,4 +1,5 @@
 # Threesixtyvoice
+================================ 
 
 A gem that wraps the 360voice API
 http://360voice.gamerdna.com/forum/topic.asp?TOPIC_ID=3
@@ -19,17 +20,59 @@ Or install it yourself as:
 
 ## Usage
 
-Badgelist
+### Badgelist
+-------------------------
+Params: None
 
-  sample source data:
-  http://www.360voice.com/api/badges-list.asp
-  
-  badgelist = Threesixtyvoice.badge_list
-  puts badgelist.version
-  puts badgelist.title
-  puts badgelist.owners
-  badgelist.badges.each { |badge| puts badge.title }
+```ruby
+badgelist = Threesixtyvoice.badge_list
+puts badgelist.version
+puts badgelist.title
+puts badgelist.owners
+badgelist.badges.each { |badge| puts badge.title }
+```
 
+### BadgetListGamertags
+-------------------------
+#### Params
+* id [required]: the badge id
+
+```ruby
+list = Threesixtyvoice.bage_list_gamertags(32)
+puts list.version
+puts list.title
+puts list.id
+puts list.count
+list.owners.each { |owner| puts owner }
+```
+
+### BlogGetentries        -TBD
+### BlogLatest            -TBD
+### ChallengeStats        -TBD
+### ChallengeViral        -TBD
+### ChallengeVitals       -TBD
+### ChallengeDetails      -TBD
+### Jobs                  -TBD
+### Leaderboards          -TBD
+### GamesList             -TBD
+### GamesListFav          -TBD
+### GamesShowTiles        -TBD
+### GamesShowTilesHtml    -TBD
+### GamertagGroups        -TBD
+### CollectionLists       -TBD
+### CollectionGamesList   -TBD
+### CollectionHistory     -TBD
+### GamertagBadges        -TBD
+### GamertagExists        -TBD
+### GamertagAuthenticate  -TBD
+### GamertagLeader        -TBD
+### GamertagProfile       -TBD
+### GamertagWatchlist     -TBD
+### GenresList            -TBD
+### Popular               -TBD
+### ScoreGetList          -TBD
+### GroupsProfile         -TBD
+### GroupsMembers         -TBD
 
 
 ## Contributing

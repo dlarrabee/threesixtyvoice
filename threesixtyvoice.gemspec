@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["david.larrabee@meyouhealth.com"]
   spec.description   = %q{A gem to interacte with the 360voice API}
   spec.summary       = %q{Wrapper for the 360voice API}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dlarrabee/threesixtyvoice"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
