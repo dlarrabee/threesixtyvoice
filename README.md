@@ -84,11 +84,21 @@ pop_blogs.popular_blogs.each do |popular|
 end
 ```
 
-
 ### ScoreGetList          -TBD
 ### GroupsProfile         -TBD
-### GroupsMembers         -TBD
+### GroupsMembers
+-------------------------
+#### Params
+* id (required): the group id
 
+```ruby
+group_members = Threesixtyvoice.group_members(2)
+puts group_members.version
+puts group_members.groupid
+puts group_members.groupname
+puts group_members.grouplink
+group_members.members.each { |m| puts "#{m.gamertag}: #{m.role} - #{m.joindate}"}
+```
 
 ## Contributing
 

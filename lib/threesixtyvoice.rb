@@ -19,6 +19,11 @@ module Threesixtyvoice
     Popular.new(doc)
   end
 
+  def self.group_members(group_id)
+    doc = get_xml_doc("/api/group-members.asp?id=#{group_id}")
+    GroupMembers.new(doc)
+  end
+
   private
 
   def self.get_xml_doc(api_path)
@@ -34,3 +39,4 @@ require "threesixtyvoice/badge"
 require "threesixtyvoice/badge_list"
 require "threesixtyvoice/badges_list_gamertags"
 require "threesixtyvoice/popular"
+require "threesixtyvoice/group_members"
