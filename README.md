@@ -69,7 +69,22 @@ list.owners.each { |owner| puts owner }
 ### GamertagProfile       -TBD
 ### GamertagWatchlist     -TBD
 ### GenresList            -TBD
-### Popular               -TBD
+### Popular
+-------------------------
+#### Params
+* none
+
+```ruby
+pop_blogs = Threesixtyvoice.popular
+puts pop_blogs.version
+pop_blogs.popular_blogs.each do |popular|
+  puts "rank: #{popular.rank}"
+  puts "gamertag: #{popular.gamertag}"
+  puts "url: #{popular.url}"
+end
+```
+
+
 ### ScoreGetList          -TBD
 ### GroupsProfile         -TBD
 ### GroupsMembers         -TBD

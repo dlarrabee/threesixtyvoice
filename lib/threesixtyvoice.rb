@@ -14,6 +14,11 @@ module Threesixtyvoice
     BadgeList.new(doc)
   end
 
+  def self.popular
+    doc = get_xml_doc("/api/popular.asp")
+    Popular.new(doc)
+  end
+
   private
 
   def self.get_xml_doc(api_path)
@@ -28,3 +33,4 @@ end
 require "threesixtyvoice/badge"
 require "threesixtyvoice/badge_list"
 require "threesixtyvoice/badges_list_gamertags"
+require "threesixtyvoice/popular"
