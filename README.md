@@ -4,6 +4,9 @@
 A gem that wraps the 360voice API
 http://360voice.gamerdna.com/forum/topic.asp?TOPIC_ID=3
 
+[![Build
+Status](https://travis-ci.org/dlarrabee/threesixtyvoice.png)](https://travis-ci.org/dlarrabee/threesixtyvoice)
+
 ## Installation
 
 Add this line to your application's Gemfile:
